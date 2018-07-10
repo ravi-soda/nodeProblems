@@ -1,5 +1,5 @@
 {
-  "name": "berkadia",
+  "name": "meanapp",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
@@ -9,9 +9,11 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "express": "^4.16.3",
-    "fs": "0.0.1-security",
-    "mongo": "^0.1.0",
-    "mongoose": "^5.2.2"
+    "body-parser": "^1.17.2",
+    "express": "^4.15.4",
+    "lodash": "^4.17.4",
+    "method-override": "^2.3.9",
+    "mongoose": "^4.11.7",
+    "requirejs": "^2.3.4"
   }
 }

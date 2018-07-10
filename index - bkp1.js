@@ -1,11 +1,9 @@
 var express = require('express');
+var express = require('express');
 var mongoose = require('mongoose');
 var bodyParser = require('body-parser');
 var methodOverride = require('method-override');
 var _=require('lodash');
-
-// states model
-var State = require('./modals/state.js'), Schema = mongoose.Schema;
 
 var MongoClient = require('mongodb').MongoClient;
 var assert = require('assert');
@@ -45,7 +43,13 @@ var findStates = function(db, callback) {
 // content routing
 app.use('/hello', function(req, res, next){
 	
-	
+	MongoClient.connect(url, function(err, db) {
+	  assert.equal(null, err);
+	  findStates(db, function() {
+		  db.close();
+	  });
+	});
+		
 	res.send('Hello World');
 	next();
 });
